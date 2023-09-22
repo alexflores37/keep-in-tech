@@ -2,8 +2,9 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
-if (process.env.SPORTS_DB_URL) {
-  sequelize = new Sequelize(process.env.SPORTS_DB_URL);
+
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -12,7 +13,7 @@ if (process.env.SPORTS_DB_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3001
+      port: 3306
     }
   );
 }
