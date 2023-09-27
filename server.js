@@ -37,6 +37,15 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use('/assets',express.static(path.join(__dirname, 'public')));
+//app.use('/assets', require('./controllers/blogRoutes'));
+//app.use('/assets', require('./controllers/api'));
+
+// app.use('/homepage', require ('./public/assets'));
+// app.use('/blogs', require ('./public/assets'));
+// app.use('/login', require ('./public/assets'));
+// app.use('/logout', require ('./public/assets'));
+// app.use('/logout', require ('./public/assets/logout.html'));
 
 app.use(routes);
 

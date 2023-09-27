@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="categories">
+        <!-- Container 1 -->
+        <div class="col-md-3">
+            <a href="blogs.html" class="sports-container">
+                <div class="bg-primary text-white text-center py-5">
+                    <h3>{{sports.name}}</h3>
+                </div>
+            </a>
+        </div>
+        <!-- Container 2 -->
+        <div class="col-md-3">
+            <a href="blogs.html" class="sports-container">
+                <div class="bg-secondary text-white text-center py-5">
+                    <h3>{{sports.name}}</h3>
+                </div>
+            </a>
+        </div>
+        <!-- Container 3 -->
+        <div class="col-md-3">
+            <a href="blogs.html" class="sports-container">
+                <div class="bg-success text-white text-center py-5">
+                    <h3>{{sports.name}}</h3>
+                </div>
+            </a>
+        </div>
+        <!-- Container 4 -->
+        <div class="col-md-3">
+            <a href="blogs.html" class="sports-container">
+                <div class="bg-info text-white text-center py-5">
+                    <h3>{{sports.name}}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Grabs Handlebars
+    const sports = document.querySelector("categories").innerHTML
+    // Compile the Handlebars 
+    const template = Handlebars.compile(sportsform);
+    const sportsData = {
+        sports.name: "Name of the sport",
+        sports.team: "Name of team",
+    };
+
+    const renderedHTML = template(sportsData);
+    document.querySelector("categories").innerHTML = renderedHTML;
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
