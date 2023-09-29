@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-const router = require('espress').router();
-const {User} = require('../models');
-const withAuth = require('../utils/auth');
-=======
 const router = require('express').Router();
-const {Comments, User, sports } = require('../models');
-const withAuth = require('../utils/auth');
+const {Comments, User, Sports } = require('../../models');
+const withAuth = require('../../utilities/auth');
 
 router.post('/comments', withAuth, async (req, res) => {
     try {
@@ -80,4 +75,3 @@ router.delete('/comments/:id', withAuth, async (req, res) => {
 });
 
 module.exports = router;
->>>>>>> 55fcb82be3102a87afb93b77aa010bb847b0b2c6
