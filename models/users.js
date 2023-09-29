@@ -33,12 +33,12 @@ User.init(
         isEmail: true,
       },
     },
-    // User's hashed password, must be at least 8 characters long
+    // User's hashed password, must be at least 5 characters long
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [5],
       },
     },
   },
