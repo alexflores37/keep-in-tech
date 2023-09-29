@@ -1,6 +1,6 @@
-const router = require('espress').router();
+const router = require('express').Router();
 const {User} = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../utilities/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -13,7 +13,8 @@ router.get('/', withAuth, async (req, res) => {
 
     res.render('homepage', (req, res) => {
       users,
-      logged_in: req.session.logged_in,
+      res.logged_in,
+      req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
