@@ -18,6 +18,21 @@ const loginFormHandler = async (event) => {
       }
     }
   };
+
+    // Grabs Handlebars
+    const templateform = document.getElementById("login-form").innerHTML
+    // Compile the Handlebars 
+    const template = Handlebars.compile(templateform);
+    const templateData = 
+    
+    {
+        user.name: "Enter your username",
+        user.password: "Enter your password",
+        user.button: "Login"
+    };
+
+    const renderedHTML = template(templateData);
+    document.querySelector("login-form").innerHTML = renderedHTML;
   
   document.querySelector('.Login-section')
     .addEventListener('submit', loginFormHandler);
