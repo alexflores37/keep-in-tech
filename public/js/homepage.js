@@ -1,16 +1,19 @@
-const homepage = require('')
-const exphbs = require('express-handlebars');
+// Import Handlebars 
+const Handlebars = require('handlebars');
 
+// Select the element where you want to insert the rendered HTML
+const categoriesElement = document.querySelector("#categories")
+const sportsform = "<p>{{name}} - {{team}}</p>";
 
-// Grabs Handlebars
-const sports = document.querySelector("categories").innerHTML
-// Compile the Handlebars 
 const template = Handlebars.compile(sportsform);
+
+// Define your data object
 const sportsData = {
-    sports.name: "Name of the sport",
-    sports.team: "Name of team",
+    name: "Name of the sport",
+    team: "Name of team",
 };
 
 const renderedHTML = template(sportsData);
-document.querySelector("categories").innerHTML = renderedHTML;
+categoriesElement.innerHTML = renderedHTML;
+
 
