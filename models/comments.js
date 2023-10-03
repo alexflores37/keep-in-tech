@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Sports extends Model {}
+class Comments extends Model {}
 
-Sports.init(
+Comments.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,8 +23,12 @@ Sports.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    add_comments: {
-        type: DataTypes.STRING,
+    blogs_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'blogs',
+          key: 'id',
+        },
       },
     user_id: {
       type: DataTypes.INTEGER,
@@ -39,8 +43,14 @@ Sports.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'sports',
+    modelName: 'comments', 
   }
 );
 
-module.exports = Sports;
+Comments.belongsTo(Blogs, {
+    foreignKey: 'blogs_id',
+    onDelete: 'CASCADE',
+  });
+  
+module.exports = Comments;
+
