@@ -26,10 +26,15 @@ We wanted all sports fans to join in on a blog created by sports fans for sports
 
 ## The Challenges We Faced, but Overcame
 
+Figuring out the routes in handlebars
+Getting our code to deployment
+
 ## Overall Thoughts
 We worked together to great a blog for sport fans to keep in touch with one another and up to date on things that matter to them.
 
 ## Links to Keep-in-Tech
+https://alexflores37.github.io/keep-in-tech/
+git@github.com:alexflores37/keep-in-tech.git
 
 ## Powerpoint Presentation Link
 
