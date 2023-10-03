@@ -49,6 +49,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+// app.get('/blogs', (req, res) => {
+//   res.render('blogpost.handlebars'); 
+// });
+// app.get('/', (req, res) => {
+//   res.render('main.handlebars'); 
+// });
+// app.get('/login', (req, res) => {
+//   res.render('login.handlebars'); 
+// });
+// app.get('/home', (req, res) => {
+//   res.render('homepage.handlebars'); 
+// });
+// app.get('/view', (req, res) => {
+//   res.render('viewblogs.handlebars'); 
+// });
+
 sequelize.sync({ force: false }).then(() => {  //activates the server
   app.listen(PORT, () => console.log('Now listening'));
 });

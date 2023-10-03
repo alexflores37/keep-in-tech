@@ -36,7 +36,7 @@ router.get('/sports', async (req, res) => {
 });
 
 // Get a specific sport by ID
-router.get('/sports/id', async (req, res) => {
+router.get('/sports/:id', async (req, res) => {
   try {
     const sportData = await Sports.findByPk(req.params.id, {
       include: [
@@ -59,7 +59,7 @@ router.get('/sports/id', async (req, res) => {
 });
 
 // Update a specific sport by ID
-router.put('/sports/id', withAuth, async (req, res) => {
+router.put('/sports/:id', withAuth, async (req, res) => {
   try {
     const updatedSport = await Sports.update(req.body, {
       where: {
@@ -80,7 +80,7 @@ router.put('/sports/id', withAuth, async (req, res) => {
 });
 
 // Delete a specific sport by ID
-router.delete('/sports/id', withAuth, async (req, res) => {
+router.delete('/sports/:id', withAuth, async (req, res) => {
   try {
     const deletedSport = await Sports.destroy({
       where: {
