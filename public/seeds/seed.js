@@ -19,7 +19,7 @@ const seedDatabase = async () => {
     });
   }
 
-  await createBlogs(users); // Calls the createBlogs function
+  await createBlogs(users); // Calls the createBlogs
 
   process.exit(0);
 };
