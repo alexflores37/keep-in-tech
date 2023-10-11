@@ -31,7 +31,7 @@ const templateData = {
     user: {
         name: "Enter your username",
         password: "Enter your password",
-        button: "Login"
+        button: "submit"
     }
 };
 

@@ -55,8 +55,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/blogs', (req, res) => {
-  res.send('Blogs page');
+router.get('/blog', (req, res) => {
+if (req.session.logged_in) { 
+  res.render('Blog');
+  }
+  res.redirect('/homepage');
 });
 
 module.exports = router;
