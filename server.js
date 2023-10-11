@@ -6,7 +6,13 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 //helpers importing and using the helpers from helper.js
 const helpers = require('./utilities/helper');
-const hbs = exphbs.create({ helpers });
+// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({
+  defaultLayout: 'main', 
+  extname: '.handlebars', 
+  layoutsDir: path.join(__dirname, 'views/layouts'), 
+  defaultDir: path.join(__dirname, 'views'),
+});
 
 //sequalize connection and importing for session
 const sequelize = require('./config/connection')
@@ -37,6 +43,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 //app.use('/assets',express.static(path.join(__dirname, 'public')));
 //app.use('/assets', require('./controllers/blogRoutes'));
 //app.use('/assets', require('./controllers/api'));
