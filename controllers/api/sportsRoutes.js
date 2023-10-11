@@ -4,7 +4,7 @@ const { Sports, User } = require('../../models');
 const withAuth = require('../../utilities/auth');
 
 // Create a new sport
-router.post('/sports', withAuth, async (req, res) => {
+router.post('/api/sports', withAuth, async (req, res) => {
   try {
     const newSport = await Sports.create({
       ...req.body,
@@ -18,7 +18,7 @@ router.post('/sports', withAuth, async (req, res) => {
 });
 
 // Get all sports
-router.get('/sports', async (req, res) => {
+router.get('api/sports', async (req, res) => {
   try {
     const sportsData = await Sports.findAll({
       include: [
@@ -36,7 +36,7 @@ router.get('/sports', async (req, res) => {
 });
 
 // Get a specific sport by ID
-router.get('/sports/:id', async (req, res) => {
+router.get('api/sports/:id', async (req, res) => {
   try {
     const sportData = await Sports.findByPk(req.params.id, {
       include: [
@@ -59,7 +59,7 @@ router.get('/sports/:id', async (req, res) => {
 });
 
 // Update a specific sport by ID
-router.put('/sports/:id', withAuth, async (req, res) => {
+router.put('api/sports/:id', withAuth, async (req, res) => {
   try {
     const updatedSport = await Sports.update(req.body, {
       where: {
@@ -80,7 +80,7 @@ router.put('/sports/:id', withAuth, async (req, res) => {
 });
 
 // Delete a specific sport by ID
-router.delete('/sports/:id', withAuth, async (req, res) => {
+router.delete('api/sports/:id', withAuth, async (req, res) => {
   try {
     const deletedSport = await Sports.destroy({
       where: {

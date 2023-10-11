@@ -37,5 +37,5 @@ https://alexflores37.github.io/keep-in-tech/
 git@github.com:alexflores37/keep-in-tech.git
 
 ## Powerpoint Presentation Link
-
+https://docs.google.com/presentation/d/11bqnLsTTeAy59oJnBd576qTLDhUAOuKPc8F-I_9pjtw/edit#slide=id.p
 ### Hope you enjoyed!
