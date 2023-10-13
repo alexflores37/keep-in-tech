@@ -15,7 +15,7 @@ Comments.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    text: {
       type: DataTypes.STRING,
     },
     date_created: {

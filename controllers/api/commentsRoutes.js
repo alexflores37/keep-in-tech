@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Blog, Comment } = require('../models'); 
+const { Blog, Comments } = require('../models'); 
 
 router.get('/blogs/:id', async (req, res) => {
     try {
       const blogId = req.params.id;
       const blog = await Blog.findByPk(blogId, {
-        include: [Comment],
+        include: [Comments],
       });
   
       if (!blog) {

@@ -6,18 +6,11 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 //helpers importing and using the helpers from helper.js
 const helpers = require('./utilities/helper');
-// const hbs = exphbs.create({ helpers });
-const hbs = exphbs.create({
-  defaultLayout: 'main', 
-  extname: '.handlebars', 
-  layoutsDir: path.join(__dirname, 'views/layouts'), 
-  defaultDir: path.join(__dirname, 'views'),
-});
-
 //sequalize connection and importing for session
 const sequelize = require('./config/connection')
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const hbs = exphbs.create({ helpers });
 //callback for starting the app and opening connection for port 3001
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -37,6 +30,8 @@ const sess = {
     })
   };
 
+app.use(session(sess));
+  
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
